@@ -3,8 +3,11 @@ spring:
     username: root
     password: tongminh1510
     # If no schema is provided, it will be auto-created
-    url: jdbc:mysql://localhost:3306/enterprise
-
+    url: jdbc:mysql://localhost:3306/course
+  session:
+    store-type=jdbc:
+  jdbc:
+    initialize-schema=always:
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     # Generate tables based on entities (update them if they exist, do not drop them)
@@ -13,7 +16,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
-
   docker:
     compose:
       enabled=false:
